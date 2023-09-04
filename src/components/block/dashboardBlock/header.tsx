@@ -11,7 +11,7 @@ import { CgBell } from "react-icons/cg";
 
 const Header = () => {
   return (
-    <div className="w-full h-[65px] shadow-md flex justify-center items-center">
+    <div className="w-full h-[65px] shadow-md flex fixed z-40 bg-white justify-center items-center">
 
       <div className="w-[90%] flex justify-between items-center">
         <h4 className="text-[20px] font-bold">ToDo</h4>

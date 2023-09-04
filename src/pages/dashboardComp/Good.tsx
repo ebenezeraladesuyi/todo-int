@@ -4,7 +4,7 @@ import Button from "../../components/static/Button";
 
 const Good = () => {
   return (
-    <div className="w-full h-[90px] flex justify-center items-center">
+    <div className="w-full h-[70px] flex justify-center items-center">
         <div className="w-[90%] flex justify-between items-center">
             <div>
                 <h4 className="text-[18px] font-bold lg:text-[20px]">Good Morning Ebenezer!</h4>
