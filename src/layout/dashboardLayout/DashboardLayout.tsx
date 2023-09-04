@@ -7,7 +7,7 @@ import { Header } from "../../components"
 
 
 
-const Dashboard = () => {
+const DashboardLayout = () => {
   return (
     <div>
 
@@ -19,4 +19,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default DashboardLayout;

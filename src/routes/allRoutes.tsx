@@ -3,12 +3,14 @@ import { createBrowserRouter } from "react-router-dom";
 import { SigninLayout } from "../layout/signinLayout";
 // import SignIn from "../pages/Auth/Signin";
 import { SignupLayout } from "../layout/signupLayout";
-import Dashboard from "../layout/dashboardLayout/Dashboard";
+import Dashboard from "../pages/dashboardComp/Dashboard";
+// import DashboardLayout from "../layout/dashboardLayout/DashboardLayout";
 // import Signup from "../pages/Auth/Signup";
 
 const SignIn = lazy(() => import("../pages/Auth/Signin"));
 const Signup = lazy(() => import("../pages/Auth/Signup"));
-
+const DashboardLayout = lazy(() => import ("../layout/dashboardLayout/DashboardLayout"))
+ 
 
 export const element = createBrowserRouter([
     {
@@ -33,12 +35,12 @@ export const element = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <Dashboard />,
+        element: <DashboardLayout />,
         children: [
-            // {
-            //     index: true,
-            //     element: <Signup />
-            // }
+            {
+                index: true,
+                element: <Dashboard />
+            }
         ]
     },
 ])
