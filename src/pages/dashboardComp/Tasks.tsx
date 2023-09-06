@@ -1,6 +1,14 @@
-// import React from 'react'
+import React from 'react'
+import EditTask from '../mobiles/editTask';
 
 const Tasks = () => {
+
+    const [editt, setEditt] = React.useState(false);
+
+    const openEditt = () => {
+        setEditt(!editt)
+    }
+
   return (
     <div className="h-[100%] mt-[15px]">
 
@@ -10,7 +18,7 @@ const Tasks = () => {
 
         <div className="pt-[30px]">
 
-            <div className="bg-[#f9fafb] flex p-[10px] pr-4 pl-4 justify-between items-center rounded shadow-md mb-[9px]">
+            <div onClick={openEditt} className="bg-[#f9fafb] flex p-[10px] pr-4 pl-4 justify-between items-center rounded shadow-md mb-[9px] hover:bg-gray-300 cursor-pointer">
 
                 <div className="flex gap-4">
                     <input type="checkbox" />
@@ -109,6 +117,14 @@ const Tasks = () => {
             </div>
 
         </div>
+
+        { editt ?
+            <div className='w-full'>
+                <EditTask />
+            </div>
+        :
+            null 
+        }
 
     </div>
   )

@@ -1,12 +1,21 @@
-// import React from 'react'
+import React from 'react'
 
 import Calender from "./Calender"
 import Good from "./Good"
 import SlideCalender from "./SlideCalender"
 import Tasks from "./Tasks";
 import { BiMicrophone } from 'react-icons/bi'
+import AddTask from '../mobiles/addTask';
+// import { CgClose } from "react-icons/cg";
 
 const Dashboard = () => {
+
+  const [add, setAdd] = React.useState(false);
+
+  const outAdd = () => {
+    setAdd(!add)
+  }
+
   return (
     <div className="w-full min-h-screen flex flex-col items-center relative">
 
@@ -36,7 +45,7 @@ const Dashboard = () => {
 
       </div>
 
-      <div className="lg:hidden fixed w-full h-[60px] flex justify-center items-center bottom-[0px] bg-white z-40">
+      <div onClick={outAdd} className="lg:hidden fixed w-full h-[60px] flex justify-center items-center bottom-[0px] bg-white z-20">
         <div className="w-[90%] h-[40px] shadow-md bg-gray-100 border-[1px] rounded pr-2 pl-2 flex justify-between items-center cursor-pointer">
 
           <h5 className="text-[14px] font-semibold">Input task</h5>
@@ -46,6 +55,16 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+
+      
+        { add ? 
+
+                  <div className='w-full'>
+                    <AddTask />
+                  </div>
+        :
+          null
+        }
 
     </div>
   )
