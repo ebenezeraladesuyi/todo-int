@@ -10,25 +10,25 @@ const Dashboard = () => {
   return (
     <div className="w-full min-h-screen flex flex-col items-center relative">
 
-      <div className="w-[100%] mt-[65px] fixed bg-white z-20">
+      <div className="w-[100%] mt-[65px] fixed bg-white pb-3 z-20">
         <Good /> 
       </div>
 
       <div className="w-[90%] flex justify-between">
 
-        <div className="w-[100%] lg:w-[73%] h-[300px] ">
+        <div className="w-[100%] lg:w-[68%] h-[300px] ">
 
-          <div className="fixed mt-[130px] bg-white z-20 w-full">
+          <div className="fixed mt-[145px] bg-white z-20 w-full pb-2">
             <SlideCalender />
           </div>
 
-          <div className="mt-[220px]">
+          <div className="mt-[250px]">
             <Tasks />
           </div>
 
         </div>
 
-        <div className="hidden lg:block lg:w-[25%] h-[300px] border-[1px]">
+        <div className="hidden lg:block lg:w-[27%]   z-20 mt-[140px] mr-[20px]">
 
           <Calender />
 

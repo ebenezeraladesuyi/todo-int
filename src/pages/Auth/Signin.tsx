@@ -11,7 +11,7 @@ const SignIn = () => {
         <>
 
             <div className="w-full h-[100vh] flex justify-center items-center">
-                <div className="w-[300px] h-[330px] shadow-lg flex flex-col justify-center items-center gap-[15px]">
+                <div className="w-[300px] h-[330px] md:shadow-lg flex flex-col justify-center items-center gap-[15px]">
                     {/* <div> */}
                         {/* <div> */}
                             <div className="w-[90px]">
