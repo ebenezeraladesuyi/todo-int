@@ -31,13 +31,13 @@ const Dashboard = () => {
             <SlideCalender />
           </div>
 
-          <div className="mt-[250px]">
+          <div className="mt-[250px] pb-[40px] lg:pb-[20px]">
             <Tasks />
           </div>
 
         </div>
 
-        <div className="hidden lg:block lg:w-[27%]   z-10 mt-[140px] mr-[20px]">
+        <div className="hidden lg:block lg:w-[27%]  z-10 mt-[140px] mr-[20px]">
 
           <Calender />
 

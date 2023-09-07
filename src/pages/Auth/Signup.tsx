@@ -20,7 +20,7 @@ const Signup = () => {
 
                             <div className="text-[17px] font-bold text-[#3F5BF6] ">Get Started</div>
 
-                            <input className="h-[30px] w-[80%] border-b-[1px] border-gray-400" type="text" placeholder="Name" />
+                            <input className="h-[30px] w-[80%] border-b-[1px] border-gray-400" type="text" placeholder="Username" />
 
                             <input className="h-[30px] w-[80%] border-b-[1px] border-gray-400" type="text" placeholder="Email" />
 

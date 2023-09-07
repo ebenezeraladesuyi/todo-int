@@ -22,6 +22,8 @@ const SignIn = () => {
 
                             <input className="h-[30px] w-[80%] border-b-[1px] border-gray-400" type="text" placeholder="Input Email" />
 
+                            <input className="h-[30px] w-[80%] border-b-[1px] border-gray-400" type="text" placeholder="Input Password" />
+
                             <button className="bg-[#3F5BF6] text-white w-[80%] h-[40px] flex justify-center items-center cursor-pointer">Signin</button>
 
                             <div className="text-[11px] font-bold">No Account? <NavLink to="/signup"><span style={{color:"blue", cursor:"pointer"}}>Create one!</span></NavLink>
