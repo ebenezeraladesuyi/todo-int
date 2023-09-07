@@ -5,7 +5,7 @@ import Good from "./Good"
 import SlideCalender from "./SlideCalender"
 import Tasks from "./Tasks";
 import { BiMicrophone } from 'react-icons/bi'
-import AddTask from '../mobiles/addTask';
+import AddTask from '../mobiles/AddTask';
 // import { CgClose } from "react-icons/cg";
 
 const Dashboard = () => {
@@ -27,7 +27,7 @@ const Dashboard = () => {
 
         <div className="w-[100%] lg:w-[68%] h-[300px] ">
 
-          <div className="fixed mt-[145px] bg-white z-20 w-full pb-2">
+          <div className="fixed mt-[145px] bg-white z-10 w-full pb-2">
             <SlideCalender />
           </div>
 
@@ -37,7 +37,7 @@ const Dashboard = () => {
 
         </div>
 
-        <div className="hidden lg:block lg:w-[27%]   z-20 mt-[140px] mr-[20px]">
+        <div className="hidden lg:block lg:w-[27%]   z-10 mt-[140px] mr-[20px]">
 
           <Calender />
 

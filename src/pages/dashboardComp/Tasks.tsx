@@ -1,24 +1,25 @@
 import React from 'react'
-import EditTask from '../mobiles/editTask';
+import PreviewTask from '../mobiles/PreviewTask';
+import LargePreview from '../largeScreen/LargePreview';
 
 const Tasks = () => {
 
-    const [editt, setEditt] = React.useState(false);
+    const [pre, setPre] = React.useState(false);
 
-    const openEditt = () => {
-        setEditt(!editt)
+    const openPre = () => {
+        setPre(!pre)
     }
 
   return (
     <div className="h-[100%] mt-[15px]">
 
-        <h5 className="text-[14px] font-bold mb-[0px] fixed bg-white z-20 pb-2 w-full h-[30px]">
+        <h5 className="text-[14px] font-bold mb-[0px] fixed bg-white z-10 pb-2 w-full h-[30px]">
             My Tasks
         </h5>
 
         <div className="pt-[30px]">
 
-            <div onClick={openEditt} className="bg-[#f9fafb] flex p-[10px] pr-4 pl-4 justify-between items-center rounded shadow-md mb-[9px] hover:bg-gray-300 cursor-pointer">
+            <div onClick={openPre} className="bg-[#f9fafb] flex p-[10px] pr-4 pl-4 justify-between items-center rounded shadow-md mb-[9px] hover:bg-gray-300 cursor-pointer">
 
                 <div className="flex gap-4">
                     <input type="checkbox" />
@@ -118,10 +119,16 @@ const Tasks = () => {
 
         </div>
 
-        { editt ?
-            <div className='w-full'>
-                <EditTask />
-            </div>
+        { pre ?
+            <>
+                <div className='w-full lg:hidden'>
+                    <PreviewTask />
+                </div>
+
+                <div className='hidden lg:block top-[155px] right-[5%] z-50 mr-[2px] fixed'>
+                    <LargePreview />
+                </div>
+            </>
         :
             null 
         }
