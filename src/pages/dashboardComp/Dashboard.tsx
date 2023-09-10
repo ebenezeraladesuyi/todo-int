@@ -60,7 +60,7 @@ const Dashboard = () => {
         { add ? 
 
                   <div className='w-full'>
-                    <AddTask />
+                    <AddTask  />
                   </div>
         :
           null

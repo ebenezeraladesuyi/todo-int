@@ -57,7 +57,7 @@ const LargePreview = () => {
 
                         <h5 className='text-[16px] font-bold text-[#3F5BF6]'>Create Wireframe</h5>
 
-                        <div className="w-full mt-[15px] flex items-center">
+                        <div className="w-full mt-[15px] flex items-center outline-none">
                             <div className='flex items-center gap-3'>
                                 <div>
                                     <AiFillCalendar />
@@ -66,7 +66,7 @@ const LargePreview = () => {
                             </div>
                         </div>
 
-                        <div className="w-full mt-[15px] flex items-center">
+                        <div className="w-full mt-[15px] flex items-center outline-none">
                             <div className='flex items-center gap-3'>
                                 <AiFillClockCircle />
                                 <h5 className='font-bold text-[14px]'>8:00 - 10:00 AM</h5>

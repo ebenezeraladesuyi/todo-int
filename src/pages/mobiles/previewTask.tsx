@@ -48,7 +48,7 @@ const PreviewTask = () => {
 
             <h5 className='text-[14px] font-bold text-[#3F5BF6]'>Create Wireframe</h5>
 
-            <div className="w-full mt-[15px] flex  items-center">
+            <div className="w-full mt-[15px] flex  items-center outline-none">
                 <div className='flex items-center gap-3'>
                     <div>
                         <AiFillCalendar />
@@ -57,7 +57,7 @@ const PreviewTask = () => {
                 </div>
             </div>
 
-            <div className="w-full mt-[15px] flex items-center">
+            <div className="w-full mt-[15px] flex items-center outline-none">
                 <div className='flex items-center gap-3'>
                     <div>
                         <AiFillClockCircle />
