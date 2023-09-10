@@ -25,7 +25,7 @@ const EditTask = () => {
         null :
     // {/* <div className="w-full h-full pt-[15px] pb-[20px]"> */}
 
- (   <div className='lg:hidden w-full bg-[#0d0d0d65] backdrop-blur-sm absolute h-screen z-50 top-0 flex flex-col justify-between transition-all ease-in-out ml-[-17px]'>
+ (   <div className='lg:hidden w-full bg-[#0d0d0d65] backdrop-blur-sm fixed h-screen z-50 top-0 bottom-0 flex flex-col justify-between transition-all ease-in-out ml-[-17px]'>
             
             <div></div>
 

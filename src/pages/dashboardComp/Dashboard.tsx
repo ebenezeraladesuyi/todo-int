@@ -61,7 +61,7 @@ const Dashboard = () => {
       
         { add ? 
 
-                  <div className='w-full'>
+                  <div className='w-full h-screen lg:hidden'>
                     <AdddTask  />
                   </div>
         :

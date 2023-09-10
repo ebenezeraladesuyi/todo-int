@@ -7,13 +7,15 @@ import ReactPaginate from 'react-paginate';
 import PreviewwTask from '../smallScreen/PreviewwTask';
 // import PreviewwTask from '../mobiles/PreviewwTask';
 
-const ITEMS_PER_PAGE = 10; // Number of items to display per page
+ 
 
 const Tasks = () => {
   const [pre, setPre] = React.useState(false);
   const openPre = () => {
     setPre(!pre);
   };
+
+  const itemPerPage = 10;
 
   const [users, setUsers] = useState<iPaginated[]>([]);
   useEffect(() => {
@@ -36,11 +38,11 @@ const Tasks = () => {
   };
 
   // Calculate the items to display on the current page
-  const offset = currentPage * ITEMS_PER_PAGE;
-  const currentPageItems = users.slice(offset, offset + ITEMS_PER_PAGE);
+  const offset = currentPage * itemPerPage;
+  const currentPageItems = users.slice(offset, offset + itemPerPage);
 
   // Calculate the number of pages
-  const pageCount = Math.ceil(users.length / ITEMS_PER_PAGE);
+  const pageCount = Math.ceil(users.length / itemPerPage);
 
   // In your component or CSS file
 const paginationClasses = {
@@ -80,7 +82,7 @@ const paginationClasses = {
 
       {pre ? (
         <>
-          <div className="w-full lg:hidden">
+          <div className="w-full lg:hidden ">
             <PreviewwTask />
           </div>
 

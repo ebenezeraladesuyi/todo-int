@@ -81,11 +81,11 @@ const AdddTask = () => {
         null :
     // {/* <div className="w-full h-full pt-[15px] pb-[20px]"> */}
 
- (   <div className='lg:hidden w-full bg-[#0d0d0d65] backdrop-blur-sm absolute h-screen z-50 top-0 flex flex-col justify-between transition-all ease-in-out'>
+ (   <div className='lg:hidden w-full bg-[#0d0d0d65] backdrop-blur-sm fixed h-screen z-50 top-0 bottom-0 flex flex-col justify-between transition-all ease-in-out'>
             
             <div></div>
 
-        <div className="w-full  bg-white flex justify-center items-center rounded-tr-3xl rounded-tl-3xl">
+        <div className="w-full bg-white flex justify-center items-center rounded-tr-3xl rounded-tl-3xl transition-all ease-in-out">
             <form onSubmit={Submit} className="w-[87%] flex flex-col justify-center items-center">
 
                 <div className='w-full flex justify-between items-center pt-[20px]'>

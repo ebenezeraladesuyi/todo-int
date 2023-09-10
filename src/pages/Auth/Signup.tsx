@@ -106,7 +106,7 @@ const Signup = () => {
                             />
                             <p className="text-[7px]">{errors?.email && errors?.email?.message}</p>
 
-                            <input className="h-[30px] w-[80%] border-b-[1px] border-gray-400 outline-none" type="text" placeholder="Password" 
+                            <input className="h-[30px] w-[80%] border-b-[1px] border-gray-400 outline-none" type="password" placeholder="Password" 
                             {...register("password")}
                             />
                             <p className="text-[7px]">{errors?.password && errors?.password?.message}</p>
