@@ -1,10 +1,10 @@
 
 import React, { useEffect, useState } from 'react';
-import PreviewTask from '../mobiles/PreviewTask';
 import LargePreview from '../largeScreen/LargePreview';
 import { iPaginated } from '../../types/interface';
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
+import { PreviewTask } from '../mobiles';
 
 const ITEMS_PER_PAGE = 10; // Number of items to display per page
 
