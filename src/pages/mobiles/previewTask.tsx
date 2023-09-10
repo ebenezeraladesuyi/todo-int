@@ -7,7 +7,7 @@ import { CgClose } from "react-icons/cg";
 import EditTask from './EdittTask';
 
 
-const PreviewTask = () => {
+export const PreviewTask = () => {
 
   const [edit, setEdit] = React.useState(false);
 
@@ -95,4 +95,4 @@ const PreviewTask = () => {
   )
 }
 
-export default PreviewTask;
+// export default PreviewTask;

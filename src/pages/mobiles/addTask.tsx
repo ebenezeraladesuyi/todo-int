@@ -16,7 +16,7 @@ import { useMutation } from '@tanstack/react-query';
 import DatasIsaLoading from '../isLoading/DataIsLoading';
 
 
-const AddTask = () => {
+export const AddTask = () => {
 
   const [add, setAdd] = React.useState(false);
 
@@ -167,4 +167,4 @@ const AddTask = () => {
   )
 }
 
-export default AddTask
+// export default AddTask;
