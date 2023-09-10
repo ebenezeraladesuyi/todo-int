@@ -4,7 +4,7 @@ import LargePreview from '../largeScreen/LargePreview';
 import { iPaginated } from '../../types/interface';
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
-import { PreviewTask } from '../mobiles';
+import PreviewwTask from '../mobiles/PreviewTask';
 
 const ITEMS_PER_PAGE = 10; // Number of items to display per page
 
@@ -80,7 +80,7 @@ const paginationClasses = {
       {pre ? (
         <>
           <div className="w-full lg:hidden">
-            <PreviewTask />
+            <PreviewwTask />
           </div>
 
           <div className="hidden lg:block top-[155px] right-[5%] z-50 mr-[2px] fixed">

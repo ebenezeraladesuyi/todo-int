@@ -5,7 +5,7 @@ import Good from "./Good"
 import SlideCalender from "./SlideCalender"
 import Tasks from "./Tasks";
 import { BiMicrophone } from 'react-icons/bi'
-import { AddTask } from '../mobiles';
+import AdddTask from '../mobiles/AddTask';
 // import AddTask from '../mobiles/AddTask';
 // import { CgClose } from "react-icons/cg";
 
@@ -61,7 +61,7 @@ const Dashboard = () => {
         { add ? 
 
                   <div className='w-full'>
-                    <AddTask  />
+                    <AdddTask  />
                   </div>
         :
           null
