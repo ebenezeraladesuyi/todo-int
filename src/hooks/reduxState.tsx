@@ -9,12 +9,12 @@ const initialState = {
 };
 
 const ReduxState = createSlice({
-    name: "istand",
+    name: "todooo",
     initialState,
     reducers: {
-        User: (state, { payload } : PayloadAction<iUser>) => 
+        setUser: (state, action: PayloadAction<any> ) => 
         {
-            state.currentUser = payload
+            state.currentUser = action.payload
         },
 
         logout: (state) => {
@@ -23,6 +23,6 @@ const ReduxState = createSlice({
     },
 });
 
-export const { User, logout } = ReduxState.actions;
+export const { setUser, logout } = ReduxState.actions;
 
 export default ReduxState.reducer;

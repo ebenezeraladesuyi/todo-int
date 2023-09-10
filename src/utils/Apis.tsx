@@ -2,7 +2,8 @@ import axios from "axios";
 import { iPaginated, iUser } from "../types/interface";
 
 
-const url = "http://localhost:2023/user"
+// const url = "http://localhost:2023/user"
+const url = "https://todo-int-be.onrender.com/user"
 
 
 export const getAll = async (data: iPaginated) => {
@@ -47,3 +48,13 @@ export const getOneUser = async (id : any) => {
           return res.data
         })
 }
+
+// create task
+export const createTask = async (data : iUser, id : any) => {
+  try {
+    const response = await axios.post(`${url}/createtask/${id}`, data);
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+};

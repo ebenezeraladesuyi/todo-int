@@ -7,7 +7,7 @@ import {
         } from "react-router-dom";
 import * as yup from "yup";
 import { signup } from "../../utils/Apis";
-import { User } from "../../hooks/reduxState";
+import { setUser } from "../../hooks/reduxState";
 import Swal from "sweetalert2";
 import { UseAppDispatch } from "../../hooks/Store";
 import { useForm } from "react-hook-form";
@@ -36,7 +36,7 @@ const Signup = () => {
 
             
             onSuccess: (data: any) => {
-                dispatch(User(data))
+                dispatch(setUser(data.data))
 
                 // console.log(data)
 

@@ -4,12 +4,15 @@ import {
             // useQueryClient 
         } from "@tanstack/react-query";
 import image from "../../assets/undraw_completed_tasks_vs6q.svg";
-import { NavLink, useNavigate } from "react-router-dom";
+import { 
+            NavLink, 
+            // useNavigate 
+        } from "react-router-dom";
 import { UseAppDispatch } from "../../hooks/Store";
 import * as yup from "yup";
 import { signin } from "../../utils/Apis";
 import Swal from "sweetalert2";
-import { User } from "../../hooks/reduxState";
+import { setUser } from "../../hooks/reduxState";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import DatasIsaLoading from "../isLoading/DataIsLoading";
@@ -24,7 +27,7 @@ const SignIn = () => {
     // const fn = () => [setshowPassword(!showPassword)];
 
     const dispatch = UseAppDispatch();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
 
     const validateSchema = yup
@@ -37,22 +40,32 @@ const SignIn = () => {
             type formData = yup.InferType<typeof validateSchema>
 
     const posting = useMutation({
-        mutationKey: ['todo'],
+        mutationKey: ['todoo'],
         mutationFn: signin,
 
         onSuccess: (data: any) => {
 
-            dispatch(User(data))
+            dispatch(setUser(data.data))
 
-            // console.log(data)
+            console.log(data)
 
-            if (data.message === "login successful") {
-              Swal.fire({
-                title: "WELCOME BACK",
-                text: "successful Login",
-                icon: "success",
-              });
-              navigate("/dashboard");
+            if (data.data) {
+                // const userData = data
+                // if (userData) {
+                //     dispatch(setUser(userData))
+                    Swal.fire({
+                        title: "WELCOME BACK",
+                        text: "successful Login",
+                        icon: "success",
+                      });
+                // }
+                // console.log(userData)
+            //   Swal.fire({
+            //     title: "WELCOME BACK",
+            //     text: "successful Login",
+            //     icon: "success",
+            //   });
+            //   navigate("/dashboard");
             }
             if (data.response.data.message === "incorrect password") {
               Swal.fire({

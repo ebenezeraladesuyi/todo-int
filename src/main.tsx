@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <Suspense fallback={<IsLoading />}>
     {/* <App /> */}
       <Provider store={Store}>
-        <PersistGate persistor={persiststore}>
+        <PersistGate loading={null} persistor={persiststore}>
           <QueryClientProvider client={myclient}>
                 <RouterProvider router={element} />
               <ReactQueryDevtools />
