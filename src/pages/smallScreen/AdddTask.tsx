@@ -85,7 +85,7 @@ const AdddTask = () => {
             
             <div></div>
 
-        <div className="w-full bg-white flex justify-center items-center rounded-tr-3xl rounded-tl-3xl transition-all ease-in-out">
+        <div className="w-full h-[60%] bg-white flex justify-center items-center rounded-tr-3xl rounded-tl-3xl transition-all ease-in-out">
             <form onSubmit={Submit} className="w-[87%] flex flex-col justify-center items-center">
 
                 <div className='w-full flex justify-between items-center pt-[20px]'>
