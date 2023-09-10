@@ -5,7 +5,8 @@ import Good from "./Good"
 import SlideCalender from "./SlideCalender"
 import Tasks from "./Tasks";
 import { BiMicrophone } from 'react-icons/bi'
-import AdddTask from '../mobiles/AddTask';
+import AdddTask from '../smallScreen/AdddTask';
+// import AdddTask from '../mobiles/AdddTask';
 // import AddTask from '../mobiles/AddTask';
 // import { CgClose } from "react-icons/cg";
 

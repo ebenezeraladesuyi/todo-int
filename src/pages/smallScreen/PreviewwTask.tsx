@@ -4,7 +4,7 @@ import {
             AiFillCalendar 
         } from "react-icons/ai";
 import { CgClose } from "react-icons/cg";
-import EditTask from './EdittTask';
+import EditTask from '../mobiles/EdittTask';
 
 
 const PreviewwTask = () => {

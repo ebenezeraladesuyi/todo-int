@@ -4,7 +4,8 @@ import LargePreview from '../largeScreen/LargePreview';
 import { iPaginated } from '../../types/interface';
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
-import PreviewwTask from '../mobiles/PreviewTask';
+import PreviewwTask from '../smallScreen/PreviewwTask';
+// import PreviewwTask from '../mobiles/PreviewwTask';
 
 const ITEMS_PER_PAGE = 10; // Number of items to display per page
 
