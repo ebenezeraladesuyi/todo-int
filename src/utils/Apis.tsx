@@ -52,7 +52,7 @@ export const getOneUser = async (id : any) => {
 // create task
 export const createTask = async (data : iUser, id : any) => {
   try {
-    const response = await axios.post(`${url}/createtask/${id}`, data);
+    const response = await axios.post(`${url}/task/createtask/${id}`, data);
     return response.data;
   } catch (error) {
     return error;
@@ -61,7 +61,7 @@ export const createTask = async (data : iUser, id : any) => {
 
 // edit task
 export const editTask = async (data: iUser, userid: any, taskid: any) => {
-  return await axios.patch(`${url}/editTask/${userid}/${taskid}`, data)
+  return await axios.patch(`${url}/task/editTask/${userid}/${taskid}`, data)
   .then((res) => {
     return res.data
   })
@@ -72,7 +72,18 @@ export const editTask = async (data: iUser, userid: any, taskid: any) => {
 
 // delete task
 export const deleteTask = async ( userid: any, taskid: any) => {
-  return await axios.delete(`${url}/deleteTask/${userid}/${taskid}`)
+  return await axios.delete(`${url}/task/deleteTask/${userid}/${taskid}`)
+  .then((res) => {
+    return res.data
+  })
+  .catch((err) => {
+    return err
+  })
+}
+
+// get one task
+export const getOneTask = async (userid: any, taskid: any) => {
+  return await axios.get(`${url}/task/${userid}/${taskid}`)
   .then((res) => {
     return res.data
   })

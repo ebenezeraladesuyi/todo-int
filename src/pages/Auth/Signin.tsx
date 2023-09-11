@@ -48,9 +48,10 @@ const SignIn = () => {
     (formData: { email: string; password: string }) => axios.post(`${url}/signin`, formData),
     {
         onSuccess: (data: any) => {
+            // console.log(data)
             
-        dispatch(setUser(data.data));
-        // console.log(data)
+        dispatch(setUser(data.data.data));
+        // console.log(data.data.data)
         QueryClient.invalidateQueries(['iStandUser']);
 
         if (data.data) {
@@ -61,15 +62,15 @@ const SignIn = () => {
               icon: "success",
               timerProgressBar: true,
               // willClose: () => {
-              //   window.location.reload();
+                // window.location.reload();
               // },
             });
             navigate("/dashboard", { replace: true });
-          } else if (data.message === "Request failed with status code 400") {
+          } else if (data.response.data === "incorrect password") {
             Swal.fire({
               icon: "error",
-              title: `${data.message}`,
-              text: "User does not exist",
+              title: `Incorrect Password or Email`,
+              text: "Check you Email or Password",
             }) 
         }
     }

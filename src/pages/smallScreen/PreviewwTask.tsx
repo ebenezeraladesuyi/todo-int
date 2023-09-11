@@ -21,6 +21,8 @@ const PreviewwTask = () => {
     setShow(!show)
   }
 
+//   const user =  useAppSelector((state) => state?.currentUser);
+
 
   return (
 

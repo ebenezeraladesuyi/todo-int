@@ -1,10 +1,10 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useMutation } from '@tanstack/react-query';
 import React from 'react'
-import { 
-    // AiFillClockCircle, 
-    AiFillCalendar 
-} from "react-icons/ai";
+// import { 
+//     // AiFillClockCircle, 
+//     AiFillCalendar 
+// } from "react-icons/ai";
 import { CgClose } from "react-icons/cg";
 import { CgBell } from "react-icons/cg";
 import * as yup from "yup";
@@ -13,6 +13,7 @@ import { createTask } from '../../utils/Apis';
 import { iUser } from '../../types/interface';
 import { setUser } from '../../hooks/reduxState';
 import { useForm } from "react-hook-form";
+import Swal from 'sweetalert2';
 
 
 // interface todoData {
@@ -33,37 +34,21 @@ const LargeAdd = () => {
   const showAddLarge = () => {
     setAddLarge(!addLarge)
   }
-
+  
   const dispatch = UseAppDispatch()
-  const getUser = useAppSelector((state) => state?.currentUser)
 
-//   target title
-// const [title, setTitle] = React.useState("")
-// // const [day, setDay] = React.useState("")
-// const [begin, setBegin] = React.useState("")
-// const [emd, setEnd] = React.useState("")
+  const getUser = useAppSelector((state) => state?.currentUser)
 
   const schema = yup
   .object({
       title: yup.string().required(),
+      date: yup.string().required(),
       startTime: yup.string().required(),
       endTime: yup.string().required(),
   })
   .required();
   
   type formdata = yup.InferType<typeof schema>;
-  
-  const posting = useMutation({
-    mutationKey: ['addTask'],
-    mutationFn: (data : iUser) => createTask(data, getUser?._id ),
-  
-    
-    onSuccess: (data: any) => {
-        dispatch(setUser(data))
-
-        console.log(data)
-    }
-  })
 
     const {
         handleSubmit,
@@ -72,6 +57,28 @@ const LargeAdd = () => {
     } = useForm<formdata>({
         resolver: yupResolver(schema),
     });
+  
+  const posting = useMutation({
+    mutationKey: ['addTask'],
+    mutationFn: (data : iUser) => createTask(data, getUser?._id),
+  
+    
+    onSuccess: (data: any) => {
+        dispatch(setUser(data.data))
+
+        console.log(data)
+
+        if (data.data) {
+            Swal.fire({
+              title: "Task Created",
+              text: "We will keep you reminded",
+              timer: 3000,
+              icon: "success",
+              timerProgressBar: true,
+            });
+          }
+    }
+  })
 
     const Submit = handleSubmit(async (data) => {
         posting.mutate(data)
@@ -115,10 +122,13 @@ const LargeAdd = () => {
 
                     <div className="w-full mt-[15px] flex justify-between items-center">
                         <div className="shadow-md w-[30%] h-[35px] flex justify-around items-center">
-                            <div className="text-[12px]">
+                             {/*<div className="text-[12px]">
                                 <AiFillCalendar />
                             </div>
-                            <h6 className="text-[12px]">Today</h6>
+                            <h6 className="text-[12px]">Today</h6> */}
+                        <input className='text-[12px]' type="date" 
+                            {...register("date")}
+                    />
                         </div>
                         
                         <div className="shadow-md w-[30%] h-[35px] flex justify-around items-center outline-none">

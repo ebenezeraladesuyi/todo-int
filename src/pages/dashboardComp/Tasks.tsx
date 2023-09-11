@@ -5,6 +5,9 @@ import { iPaginated } from '../../types/interface';
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 import PreviewwTask from '../smallScreen/PreviewwTask';
+import { useAppSelector } from '../../hooks/Store';
+import { useQuery } from '@tanstack/react-query';
+import { getOneUser } from '../../utils/Apis';
 // import PreviewwTask from '../mobiles/PreviewwTask';
 
  
@@ -60,6 +63,15 @@ const paginationClasses = {
     activeClassName: 'bg-[#0E31F2] text-white font-bold px-3 py-2 rounded',
     disabledClassName: 'text-gray-400 cursor-not-allowed',
   };
+
+  const user =  useAppSelector((state) => state?.currentUser);
+
+  const data  = useQuery({
+    queryKey: ['to-do'],
+    queryFn: () => getOneUser(user?._id)
+  })
+
+  // console.log(user)
   
 
 
@@ -70,6 +82,35 @@ const paginationClasses = {
         My Tasks
       </h5>
 
+
+{/* map from my All Task api */}
+  {data?.tasks?.map((el: any) => 
+      <div className="pt-[30px] pb-[15px]" 
+      key={el.id}
+      >
+        
+          {/* Render your user data */}
+          <div className="bg-[#f9fafb] flex p-[10px] pr-4 pl-4 justify-between items-center rounded shadow-md mb-[-30px] hover:bg-gray-300 cursor-pointer h-[70px]">
+            <div className="flex gap-4">
+              <input type="checkbox" />
+              <div 
+              onClick={ () => {
+                          openPre;
+                          openPres
+                          }}
+              >
+                <h4 className="text-[12px] lg:text-[15px] font-bold">{el.title}</h4>
+                <h4 className="text-gray-400 text-[12px] lg:text-[13px]">{el.startTime} - {el.endTime}</h4>
+              </div>
+            </div>
+            <h4 className="text-[13px] lg:text-[15px] font-bold text-gray-400">{el.date}</h4>
+          </div>
+
+        </div>
+         )}
+
+
+{/* mapped fron json api */}
       {currentPageItems.map((user) => (
         <div className="pt-[30px] pb-[15px]" key={user.id}>
           {/* Render your user data */}

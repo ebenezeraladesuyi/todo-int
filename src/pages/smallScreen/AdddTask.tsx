@@ -1,8 +1,8 @@
 import React from 'react'
-import { 
-            // AiFillClockCircle, 
-            AiFillCalendar 
-        } from "react-icons/ai";
+// import { 
+//             AiFillClockCircle, 
+//             AiFillCalendar 
+//         } from "react-icons/ai";
 import { CgClose } from "react-icons/cg";
 import { CgBell } from "react-icons/cg";
 import * as yup from "yup";
@@ -14,6 +14,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useMutation } from '@tanstack/react-query';
 import DatasIsaLoading from '../isLoading/DataIsLoading';
+import Swal from 'sweetalert2';
 
 
 const AdddTask = () => {
@@ -28,17 +29,10 @@ const AdddTask = () => {
 
   const getUser = useAppSelector((state) => state?.currentUser)
 
-//   console.log(getUser)
-
-//   target title
-// const [title, setTitle] = React.useState("")
-// // const [day, setDay] = React.useState("")
-// const [begin, setBegin] = React.useState("")
-// const [emd, setEnd] = React.useState("")
-
   const schema = yup
   .object({
       title: yup.string().required(),
+      date: yup.string().required(),
       startTime: yup.string().required(),
       endTime: yup.string().required(),
   })
@@ -60,9 +54,19 @@ const AdddTask = () => {
   
     
     onSuccess: (data: any) => {
-        dispatch(setUser(data))
+        dispatch(setUser(data.data))
 
         console.log(data)
+
+        if (data.data) {
+            Swal.fire({
+              title: "Task Created",
+              text: "We will keep you reminded",
+              timer: 3000,
+              icon: "success",
+              timerProgressBar: true,
+            });
+          }
     }
   })
 
@@ -103,17 +107,20 @@ const AdddTask = () => {
 
             <div className="w-full mt-[15px] flex justify-between items-center">
                 <div className="shadow-md w-[30%] h-[35px] flex justify-around items-center">
-                    <div className="text-[12px]">
+                    {/* <div className="text-[12px]">
                         <AiFillCalendar />
-                    </div>
-                    <h6 className="text-[12px]">Today</h6>
+                    </div> */}
+                    {/* <h6 className="text-[12px]">Today</h6> */}
+                    <input className='text-[12px]' type="date" 
+                        {...register("date")}
+                    />
                 </div>
                 
                 <div className="shadow-md w-[30%] h-[35px] flex justify-around items-center outline-none">
                     {/* <div className="text-[12px]">
                         <AiFillCalendar />
                     </div> */}
-                    <input type="time" 
+                    <input className='text-[1px]' type="time" 
                         {...register("startTime")}
                     />
                 </div>
@@ -122,7 +129,7 @@ const AdddTask = () => {
                     {/* <div className="text-[12px]">
                         <AiFillCalendar />
                     </div> */}
-                    <input type="time" 
+                    <input className='text-[12px]' type="time" 
                         {...register("endTime")}
                     />
                 </div>
