@@ -31,7 +31,7 @@ const Good = () => {
     <div className="w-full h-[70px] flex justify-center items-center ">
         <div className="w-[90%] flex justify-between items-center relative">
             <div>
-                <h4 className="text-[18px] font-bold lg:text-[20px]">Good Morning   
+                <h4 className="text-[18px] font-bold lg:text-[20px]">Goodday   
                      "{data.isLoading ? (
                     <DatasIsaLoading />
                     ) : (
@@ -41,7 +41,7 @@ const Good = () => {
                 <h5 className="text-gray-400 text-[14px] lg:text-[16px]">You got some task to do.</h5>
             </div>
 
-            <div className="hidden lg:block" onClick={showLargeScreenAdd}>
+            <div className="hidden lg:block outline-none" onClick={showLargeScreenAdd}>
                 <Button buttonText="Create New Task" />
             </div>
 

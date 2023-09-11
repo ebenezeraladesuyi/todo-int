@@ -28,7 +28,7 @@ const AdddTask = () => {
 
   const getUser = useAppSelector((state) => state?.currentUser)
 
-  console.log(getUser)
+//   console.log(getUser)
 
 //   target title
 // const [title, setTitle] = React.useState("")

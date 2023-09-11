@@ -21,6 +21,7 @@
     "@types/redux-persist": "^4.3.1",
     "@types/yup": "^0.32.0",
     "axios": "^1.4.0",
+    "formik": "^2.4.4",
     "react": "^18.2.0",
     "react-calendar": "^4.6.0",
     "react-dom": "^18.2.0",

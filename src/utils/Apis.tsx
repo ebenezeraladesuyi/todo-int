@@ -30,8 +30,8 @@ export const signup = async (data : iUser) => {
 }
 
 // signin
-export const signin = async (data : iUser) => {
-  return await axios.post(`${url}/signin`, data)
+export const signin = async ({email, password}: any) => {
+  return await axios.post(`${url}/signin`, {email,  password})
   .then((res) => {
     return res.data
   })
@@ -58,3 +58,25 @@ export const createTask = async (data : iUser, id : any) => {
     return error;
   }
 };
+
+// edit task
+export const editTask = async (data: iUser, userid: any, taskid: any) => {
+  return await axios.patch(`${url}/editTask/${userid}/${taskid}`, data)
+  .then((res) => {
+    return res.data
+  })
+  .catch((err) => {
+    return err
+  })
+}
+
+// delete task
+export const deleteTask = async ( userid: any, taskid: any) => {
+  return await axios.delete(`${url}/deleteTask/${userid}/${taskid}`)
+  .then((res) => {
+    return res.data
+  })
+  .catch((err) => {
+    return err
+  })
+}

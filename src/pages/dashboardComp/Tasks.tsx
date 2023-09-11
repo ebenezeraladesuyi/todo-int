@@ -15,6 +15,12 @@ const Tasks = () => {
     setPre(!pre);
   };
 
+  
+  const [pres, setPres] = React.useState(false);
+  const openPres = () => {
+    setPres(!pres);
+  };
+
   const itemPerPage = 10;
 
   const [users, setUsers] = useState<iPaginated[]>([]);
@@ -70,7 +76,10 @@ const paginationClasses = {
           <div className="bg-[#f9fafb] flex p-[10px] pr-4 pl-4 justify-between items-center rounded shadow-md mb-[-30px] hover:bg-gray-300 cursor-pointer h-[70px]">
             <div className="flex gap-4">
               <input type="checkbox" />
-              <div onClick={openPre}>
+              <div onClick={ () => {
+                          openPre;
+                          openPres
+                          }}>
                 <h4 className="text-[12px] lg:text-[15px] font-bold">{user.title}</h4>
                 <h4 className="text-gray-400 text-[12px] lg:text-[13px]">10:30am - 11:30am</h4>
               </div>
@@ -86,10 +95,19 @@ const paginationClasses = {
             <PreviewwTask />
           </div>
 
+        </>
+      ) : null}
+
+      
+
+      {pres ? (
+        <>
+
           <div className="hidden lg:block top-[155px] right-[5%] z-50 mr-[2px] fixed">
             <LargePreview />
           </div>
         </>
+
       ) : null}
 
       {/* Render the pagination component */}
