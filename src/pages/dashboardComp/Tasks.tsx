@@ -68,10 +68,10 @@ const paginationClasses = {
 
   const data  = useQuery({
     queryKey: ['to-do'],
-    queryFn: () => getOneUser(user?._id)
+    queryFn: () => getOneUser(user)
   })
 
-  // console.log(user)
+  console.log(data.data)
   
 
 
@@ -111,8 +111,8 @@ const paginationClasses = {
 
 
 {/* mapped fron json api */}
-      {currentPageItems.map((user) => (
-        <div className="pt-[30px] pb-[15px]" key={user.id}>
+      {currentPageItems.map((e) => (
+        <div className="pt-[30px] pb-[15px]" key={e.id}>
           {/* Render your user data */}
           <div className="bg-[#f9fafb] flex p-[10px] pr-4 pl-4 justify-between items-center rounded shadow-md mb-[-30px] hover:bg-gray-300 cursor-pointer h-[70px]">
             <div className="flex gap-4">
@@ -121,7 +121,7 @@ const paginationClasses = {
                           openPre;
                           openPres
                           }}>
-                <h4 className="text-[12px] lg:text-[15px] font-bold">{user.title}</h4>
+                <h4 className="text-[12px] lg:text-[15px] font-bold">{e.title}</h4>
                 <h4 className="text-gray-400 text-[12px] lg:text-[13px]">10:30am - 11:30am</h4>
               </div>
             </div>
